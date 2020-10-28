@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/28 13:01:37 by jchristi          #+#    #+#             */
-/*   Updated: 2020/10/28 13:01:43 by jchristi         ###   ########.fr       */
+/*   Created: 2020/10/28 13:21:44 by jchristi          #+#    #+#             */
+/*   Updated: 2020/10/28 13:40:17 by jchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-char *strncpy (char *destination, const char *source, size_t n)
+void *calloc(size_t number, size_t size)
 {
-	size_t i;
+	void *des;
 
-	i = 0;
-	while (source[i] && i < n)
-	{
-		destination[i] = source[i];
-		i++;
-	}
-	while (i < n)
-		destination[i++] = '\0';
-	return (destination);
+    des = malloc(number * sizeof(size));
+	if (des != NULL)
+		ft_bzero(des, size * number);
+	return (des);
 }

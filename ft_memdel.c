@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/28 13:01:37 by jchristi          #+#    #+#             */
-/*   Updated: 2020/10/28 13:01:43 by jchristi         ###   ########.fr       */
+/*   Created: 2020/10/28 12:51:43 by jchristi          #+#    #+#             */
+/*   Updated: 2020/10/28 12:51:46 by jchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *strncpy (char *destination, const char *source, size_t n)
+void	ft_memdel(void **ap)
 {
-	size_t i;
-
-	i = 0;
-	while (source[i] && i < n)
+	if (ap && *ap)
 	{
-		destination[i] = source[i];
-		i++;
+		free(*ap);
+		*ap = NULL;
 	}
-	while (i < n)
-		destination[i++] = '\0';
-	return (destination);
 }

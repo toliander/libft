@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/28 13:01:37 by jchristi          #+#    #+#             */
-/*   Updated: 2020/10/28 13:01:43 by jchristi         ###   ########.fr       */
+/*   Created: 2020/10/28 21:13:41 by jchristi          #+#    #+#             */
+/*   Updated: 2020/10/28 21:35:04 by jchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *strncpy (char *destination, const char *source, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t i;
+	char	*sub;
+	size_t	i;
 
 	i = 0;
-	while (source[i] && i < n)
+	if (!s || start + len > ft_strlen(s))
+		return (NULL);
+	if ((sub = ft_strnew(len)))
 	{
-		destination[i] = source[i];
-		i++;
+		while (len)
+		{
+			sub[i++] = s[start++];
+			len--;
+		}
+		sub[i] = '\0';
 	}
-	while (i < n)
-		destination[i++] = '\0';
-	return (destination);
+	return (sub);
 }

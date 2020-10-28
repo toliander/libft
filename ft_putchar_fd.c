@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/28 13:01:37 by jchristi          #+#    #+#             */
-/*   Updated: 2020/10/28 13:01:43 by jchristi         ###   ########.fr       */
+/*   Created: 2020/10/28 20:33:02 by jchristi          #+#    #+#             */
+/*   Updated: 2020/10/28 21:12:29 by jchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
 
-char *strncpy (char *destination, const char *source, size_t n)
+void	ft_putchar(char c, int fd)
 {
-	size_t i;
-
-	i = 0;
-	while (source[i] && i < n)
-	{
-		destination[i] = source[i];
-		i++;
-	}
-	while (i < n)
-		destination[i++] = '\0';
-	return (destination);
+	write(fd, &c, 1);
+}
+int main()
+{
+	int fd = open("text", O_RDWR); 
+	printf("%d\n", fd);
+	ft_putchar('f', fd);
+	return(0);
 }

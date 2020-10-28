@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/28 13:01:37 by jchristi          #+#    #+#             */
-/*   Updated: 2020/10/28 13:01:43 by jchristi         ###   ########.fr       */
+/*   Created: 2020/10/28 22:10:20 by jchristi          #+#    #+#             */
+/*   Updated: 2020/10/28 22:36:20 by jchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *strncpy (char *destination, const char *source, size_t n)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t i;
+	size_t		col;
+	char		*new;
 
-	i = 0;
-	while (source[i] && i < n)
-	{
-		destination[i] = source[i];
-		i++;
-	}
-	while (i < n)
-		destination[i++] = '\0';
-	return (destination);
+	if (!s1 || !set)
+		return (NULL);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	col = ft_strlen(s1);
+	while (col && ft_strchr(set, s1[col]))
+		col--;
+	new = ft_substr((char*)s1, 0, col + 1);
+	return (new);
 }

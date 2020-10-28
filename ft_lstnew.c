@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/28 13:01:37 by jchristi          #+#    #+#             */
-/*   Updated: 2020/10/28 13:01:43 by jchristi         ###   ########.fr       */
+/*   Created: 2020/10/28 11:59:50 by jchristi          #+#    #+#             */
+/*   Updated: 2020/10/28 12:07:02 by jchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *strncpy (char *destination, const char *source, size_t n)
+t_list *ft_lstnew(void *content)
 {
-	size_t i;
 
-	i = 0;
-	while (source[i] && i < n)
-	{
-		destination[i] = source[i];
-		i++;
-	}
-	while (i < n)
-		destination[i++] = '\0';
-	return (destination);
 }

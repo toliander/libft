@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/28 13:01:37 by jchristi          #+#    #+#             */
-/*   Updated: 2020/10/28 13:01:43 by jchristi         ###   ########.fr       */
+/*   Created: 2020/10/28 12:57:54 by jchristi          #+#    #+#             */
+/*   Updated: 2020/10/28 12:58:01 by jchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *strncpy (char *destination, const char *source, size_t n)
+size_t strlcat(char *dst, const char *src, size_t size)
 {
-	size_t i;
+    size_t	i;
+	size_t	j;
+	size_t	dstlen;
+	size_t	srclen;
 
+	srclen = ft_strlen(src);
+	dstlen = ft_strlen(dst);
+	j = dstlen;
 	i = 0;
-	while (source[i] && i < n)
+	if (dstlen < size - 1 && size > 0)
 	{
-		destination[i] = source[i];
-		i++;
+		while (src[i] && dstlen + i < size - 1)
+		{
+			dst[j] = src[i];
+			j++;
+			i++;
+		}
+		dst[j] = 0;
 	}
-	while (i < n)
-		destination[i++] = '\0';
-	return (destination);
+	if (dstlen >= size)
+		dstlen = size;
+	return (dstlen + srclen);
 }

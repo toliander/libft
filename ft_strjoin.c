@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/28 13:01:37 by jchristi          #+#    #+#             */
-/*   Updated: 2020/10/28 13:01:43 by jchristi         ###   ########.fr       */
+/*   Created: 2020/10/28 21:35:42 by jchristi          #+#    #+#             */
+/*   Updated: 2020/10/28 22:09:45 by jchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *strncpy (char *destination, const char *source, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t i;
+	char	*sub;
+	size_t	i;
 
 	i = 0;
-	while (source[i] && i < n)
+	if (!s1 && !s2)
+		return (NULL);
+	if (!s1)
+		return (ft_strdup(s2));
+	if (!s2)
+		return (ft_strdup(s1));
+	if ((sub = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
 	{
-		destination[i] = source[i];
-		i++;
+		while (s1)
+			sub[i++] = *s1;
+		while (s2)
+			sub[i++] = *s2;
+		sub[i] = '\0';
 	}
-	while (i < n)
-		destination[i++] = '\0';
-	return (destination);
+	return (sub);
 }

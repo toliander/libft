@@ -3,14 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toliander <toliander@student.42.fr>        +#+  +:+       +#+        */
+/*   By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/16 16:15:48 by toliander         #+#    #+#             */
-/*   Updated: 2020/10/18 17:30:30 by toliander        ###   ########.fr       */
+/*   Created: 2020/10/28 12:51:20 by jchristi          #+#    #+#             */
+/*   Updated: 2020/10/28 12:51:28 by jchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 void *ft_memcpy(void *dest, const void *source, size_t n)
 {
