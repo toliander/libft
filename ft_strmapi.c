@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toliander <toliander@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/28 20:33:02 by jchristi          #+#    #+#             */
-/*   Updated: 2020/10/29 22:41:53 by toliander        ###   ########.fr       */
+/*   Created: 2020/10/29 22:25:53 by toliander         #+#    #+#             */
+/*   Updated: 2020/10/29 22:34:20 by toliander        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <fcntl.h>
+#include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	write(fd, &c, 1);
+    char    *res;
+    size_t  i;
+
+    if(!(res = ft_strnew(ft_strlen(s))) || !s || !f)
+        return(NULL);
+    i = 0;
+    while(s[i])
+    {
+        res[i] = f(i, s[i]);
+        i++;
+    }
+    return (res);
 }
-//int main()
-//{
-	//int fd = open("text", O_RDWR); 
-	//printf("%d\n", fd);
-	//ft_putchar('f', fd);
-	//return(0);
-//}

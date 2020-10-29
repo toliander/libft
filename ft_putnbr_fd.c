@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toliander <toliander@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/28 20:33:02 by jchristi          #+#    #+#             */
-/*   Updated: 2020/10/29 22:41:53 by toliander        ###   ########.fr       */
+/*   Created: 2020/10/29 22:53:11 by toliander         #+#    #+#             */
+/*   Updated: 2020/10/30 00:23:17 by toliander        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <fcntl.h>
+#include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void ft_putnbr_fd(int n, int fd)
 {
-	write(fd, &c, 1);
+	unsigned int num;
+
+	if (n < 0)
+		ft_putchar_fd('-', fd);
+	num =  (n < 0) ? -n : n;
+	if (num >= 10)
+	{
+		ft_putnbr_fd(num / 10, fd);
+		ft_putnbr_fd(num % 10, fd);
+	}
+	else
+		ft_putchar_fd(num + '0', fd);
 }
-//int main()
-//{
-	//int fd = open("text", O_RDWR); 
-	//printf("%d\n", fd);
-	//ft_putchar('f', fd);
-	//return(0);
-//}
+
+int main()
+{
+    int num = -2147483648;
+    ft_putnbr_fd(num, 1);
+    return (0);
+}

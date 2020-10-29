@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toliander <toliander@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/28 20:33:02 by jchristi          #+#    #+#             */
-/*   Updated: 2020/10/29 22:41:53 by toliander        ###   ########.fr       */
+/*   Created: 2020/10/29 22:47:15 by toliander         #+#    #+#             */
+/*   Updated: 2020/10/29 22:52:51 by toliander        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <fcntl.h>
+#include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void		ft_putendl_fd(char const *s, int fd)
 {
-	write(fd, &c, 1);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
-//int main()
-//{
-	//int fd = open("text", O_RDWR); 
-	//printf("%d\n", fd);
-	//ft_putchar('f', fd);
-	//return(0);
-//}

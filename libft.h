@@ -6,7 +6,7 @@
 /*   By: toliander <toliander@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 12:03:05 by jchristi          #+#    #+#             */
-/*   Updated: 2020/10/29 20:31:35 by toliander        ###   ########.fr       */
+/*   Updated: 2020/10/29 22:42:08 by toliander        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t ft_strlen(const char *s);
 int		ft_isdigit(int c);
 
 char	*ft_strnew(size_t size);
+
+void	ft_putchar_fd(char c, int fd);
 
 void ft_bzero(void *s, size_t n);
 void	*ft_memalloc(size_t size);
