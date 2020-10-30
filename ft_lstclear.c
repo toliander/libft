@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toliander <toliander@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/28 11:59:50 by jchristi          #+#    #+#             */
-/*   Updated: 2020/10/30 12:14:15 by toliander        ###   ########.fr       */
+/*   Created: 2020/10/30 23:16:26 by toliander         #+#    #+#             */
+/*   Updated: 2020/10/30 23:19:08 by toliander        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+void ft_lstclear(t_list **lst, void (*del)(void*))
 {
-    t_list *tmp;
+	t_list *todel;
+	t_list *toswap;
 
-    if(tmp = (t_list *)ft_memalloc(sizeof(t_list)))
-    {
-        if(!content)
-            tmp->content = NULL;
-        else
-            tmp->content = content;
-        tmp->next = NULL;
-    }
-    return (tmp);
+	todel = *lst;
+	while (todel)
+	{
+		toswap = todel->next;
+		ft_lstdelone(todel, del);
+		todel = toswap;
+	}
+	*lst = NULL;
 }

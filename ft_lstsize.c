@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toliander <toliander@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/28 11:59:50 by jchristi          #+#    #+#             */
-/*   Updated: 2020/10/30 12:14:15 by toliander        ###   ########.fr       */
+/*   Created: 2020/10/30 20:15:36 by toliander         #+#    #+#             */
+/*   Updated: 2020/10/30 22:54:42 by toliander        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+int ft_lstsize(t_list *lst)
 {
-    t_list *tmp;
+	int		i;
 
-    if(tmp = (t_list *)ft_memalloc(sizeof(t_list)))
-    {
-        if(!content)
-            tmp->content = NULL;
-        else
-            tmp->content = content;
-        tmp->next = NULL;
-    }
-    return (tmp);
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }
