@@ -6,15 +6,15 @@
 /*   By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 12:57:54 by jchristi          #+#    #+#             */
-/*   Updated: 2020/10/28 12:58:01 by jchristi         ###   ########.fr       */
+/*   Updated: 2020/11/07 22:05:19 by jchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-    size_t	i;
+	size_t	i;
 	size_t	j;
 	size_t	dstlen;
 	size_t	srclen;

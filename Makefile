@@ -3,14 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: toliander <toliander@student.42.fr>        +#+  +:+       +#+         #
+#    By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/07 11:53:52 by toliander         #+#    #+#              #
-#    Updated: 2020/11/07 14:38:28 by toliander        ###   ########.fr        #
+#    Updated: 2020/11/07 21:38:42 by jchristi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = ft_memset.c		\
+		ft_memalloc_bonus.c     \
 		ft_bzero.c		\
 		ft_memcpy.c		\
 		ft_memccpy.c		\
@@ -21,11 +22,13 @@ SRCS = ft_memset.c		\
 		ft_isalpha.c 	\
 		ft_isdigit.c		\
 		ft_isalnum.c		\
+		ft_strchr.c		\
+		ft_strnew.c		\
+		ft_strdel_bonus.c	\
 		ft_isascii.c		\
 		ft_isprint.c		\
 		ft_toupper.c		\
 		ft_tolower.c		\
-		ft_strchr.c		\
 		ft_strrchr.c		\
 		ft_strncmp.c		\
 		ft_strlcpy.c		\
@@ -45,7 +48,8 @@ SRCS = ft_memset.c		\
 		ft_putendl_fd.c	\
 		ft_putnbr_fd.c
 
-SRCSB =	ft_lstnew.c			\
+SRCSB =	$(SRCS) \
+		ft_lstnew.c			\
 		ft_lstadd_front.c	\
 		ft_lstsize.c		\
 		ft_lstlast.c		\
@@ -54,16 +58,15 @@ SRCSB =	ft_lstnew.c			\
 		ft_lstdelone.c		\
 		ft_lstiter.c		\
 		ft_lstmap.c			\
-		$(SRCS)
+		
 
 NAME = libft.a
 
-OBJS_DIR = objs/
 OBJS = $(SRCS:.c=.o)
-OBJECTS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
+# OBJECTS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
 
 OBJSB = $(SRCSB:.c=.o)
-OBJECTS_BONUS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJSB))
+# OBJECTS_BONUS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJSB))
 
 CC = gcc
 
@@ -71,23 +74,25 @@ CC_FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(OBJS_DIR)%.o : %.c libft.h
-	@mkdir -p $(OBJS_DIR)
-	@echo "Compiling: $<"
-	@$(CC) $(CC_FLAGS) -c $< -o $@
 
-$(NAME): $(OBJECTS_PREFIXED)
-	@ar rc $(NAME) $(OBJECTS_PREFIXED)
+
+$(NAME): $(OBJS)
+	@ar rc $(NAME) $(OBJS)
+	ranlib libft.a
 	@echo "Libft Done !"
 
+%.o : %.c libft.h
+	@echo "Compiling: $<"
+	@$(CC) $(CC_FLAGS) -c $< -o $@
+	
 clean:
-	rm -rf $(OBJS_DIR)
+	rm -f $(OBJS) $(OBJSB)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-bonus: $(OBJECTS_BONUS_PREFIXED)
-	@ar r $(NAME) $(OBJECTS_BONUS_PREFIXED)
+bonus: $(OBJSB)
+	@ar rc $(NAME) $(OBJS) $(OBJSB)
 	@echo "Libft Bonus Done !"

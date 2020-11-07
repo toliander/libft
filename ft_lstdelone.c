@@ -3,26 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toliander <toliander@student.42.fr>        +#+  +:+       +#+        */
+/*   By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 23:11:54 by toliander         #+#    #+#             */
-/*   Updated: 2020/10/30 23:15:40 by toliander        ###   ########.fr       */
+/*   Updated: 2020/11/07 20:11:28 by jchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-    if (lst && del)
-    {
-	(del)(lst->content);
-	free(lst);
-    }
-    //вполне возможно что надо писать 
-    //if (!lst || !del)
-	//	return ;
-	//(del)(lst->content);
-	//free(lst);
-    // но я не уверен что return вообще имеет место быть т.к. функция как бы войд в общем я даун помогите
+	if (lst && del)
+	{
+		(del)(lst->content);
+		free(lst);
+	}
 }

@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toliander <toliander@student.42.fr>        +#+  +:+       +#+        */
+/*   By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 23:25:06 by toliander         #+#    #+#             */
-/*   Updated: 2020/10/30 23:50:06 by toliander        ###   ########.fr       */
+/*   Updated: 2020/11/07 23:49:49 by jchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list *new;
 	t_list *save;
 
-	if (!lst || !f || !del)
+	if (!lst || !f)
 		return (0);
 	new = ft_lstnew(f(lst->content));
 	if (!new)

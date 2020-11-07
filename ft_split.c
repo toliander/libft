@@ -3,24 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toliander <toliander@student.42.fr>        +#+  +:+       +#+        */
+/*   By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 13:29:12 by toliander         #+#    #+#             */
-/*   Updated: 2020/11/07 12:44:04 by toliander        ###   ########.fr       */
+/*   Updated: 2020/11/07 22:05:59 by jchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-
-void	ft_strdel(char **as)
-{
-	if (as && *as)
-	{
-		free(*as);
-		*as = NULL;
-	}
-}
 
 static size_t	countwords(char const *str, char c)
 {
@@ -88,7 +78,7 @@ static char		**takeallwords(char *s, char c, size_t words_count)
 	return (words);
 }
 
-char			**ft_strsplit(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
 	char	**words;
 	char	*line;
