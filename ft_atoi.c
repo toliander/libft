@@ -6,7 +6,7 @@
 /*   By: toliander <toliander@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 19:20:42 by jchristi          #+#    #+#             */
-/*   Updated: 2020/10/29 21:44:48 by toliander        ###   ########.fr       */
+/*   Updated: 2020/11/07 11:57:01 by toliander        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,4 @@ int     ft_atoi(const char *str)
         c++;
     }
     return((int)(res*sign));
-}
-int main()
-{
-    const char *ss = "6673453453452342344836489";
-    printf("%d\n%d", ft_atoi(ss), atoi(ss));
 }

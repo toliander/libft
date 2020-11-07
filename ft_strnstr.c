@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: toliander <toliander@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 18:25:47 by jchristi          #+#    #+#             */
-/*   Updated: 2020/10/28 19:20:12 by jchristi         ###   ########.fr       */
+/*   Updated: 2020/11/07 12:21:02 by toliander        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,4 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		i++;
 	}
 	return (NULL);
-}
-int main()
-{
-    const char *hay;
-    const char *need;
-
-    hay = "iuerhg";
-    need = "uyf";
-    printf("%s", ft_strnstr(hay, need, 10));
-    return(0); 
 }

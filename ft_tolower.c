@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: toliander <toliander@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 13:04:57 by jchristi          #+#    #+#             */
-/*   Updated: 2020/10/28 13:05:03 by jchristi         ###   ########.fr       */
+/*   Updated: 2020/11/07 12:06:08 by toliander        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,6 @@ int     ft_tolower(int c)
 {
     if (c >= 'A' && c <= 'Z')
         return (c - 'A' + 'a');
+    else
+        return(c);
 }

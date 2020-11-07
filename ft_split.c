@@ -6,12 +6,21 @@
 /*   By: toliander <toliander@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 13:29:12 by toliander         #+#    #+#             */
-/*   Updated: 2020/10/29 19:12:49 by toliander        ###   ########.fr       */
+/*   Updated: 2020/11/07 12:44:04 by toliander        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+
+void	ft_strdel(char **as)
+{
+	if (as && *as)
+	{
+		free(*as);
+		*as = NULL;
+	}
+}
 
 static size_t	countwords(char const *str, char c)
 {

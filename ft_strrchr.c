@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: toliander <toliander@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 13:03:10 by jchristi          #+#    #+#             */
-/*   Updated: 2020/10/28 13:04:05 by jchristi         ###   ########.fr       */
+/*   Updated: 2020/11/07 12:18:56 by toliander        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 char *strrchr (const char *str, int ch)
 {
-    unsigned char *s;
-    unsigned char c;
+    char *s;
+    char c;
 
-    c = (unsigned char)ch;
-    s = (unsigned char *)str + ft_strlen(str);
+    c = (char)ch;
+    s = (char *)str + ft_strlen(str);
 
     while (s >= str)
     {

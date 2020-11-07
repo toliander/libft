@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: toliander <toliander@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 12:50:17 by jchristi          #+#    #+#             */
-/*   Updated: 2020/10/28 12:50:24 by jchristi         ###   ########.fr       */
+/*   Updated: 2020/11/07 12:03:28 by toliander        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void *ft_memchr(const void *s, int c, size_t n)
 
     while (n--)
     {
-        if (*src == c)
+        if (*src == sym)
             return(src);
         else
             src++;
