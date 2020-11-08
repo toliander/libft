@@ -6,7 +6,7 @@
 /*   By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 21:13:41 by jchristi          #+#    #+#             */
-/*   Updated: 2020/11/07 23:12:53 by jchristi         ###   ########.fr       */
+/*   Updated: 2020/11/08 01:14:12 by jchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	if (start >= ft_strlen(s))
-		return(ft_strdup(""));
+		return (ft_strdup(""));
 	if ((sub = ft_strnew(len)))
 	{
 		while (len)

@@ -6,7 +6,7 @@
 /*   By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 19:17:02 by toliander         #+#    #+#             */
-/*   Updated: 2020/11/07 23:22:01 by jchristi         ###   ########.fr       */
+/*   Updated: 2020/11/08 02:29:30 by jchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static size_t	lenst(int n)
 {
-	size_t len;
+	size_t	len;
 
 	len = 1;
 	if (n < 0)
@@ -27,7 +27,7 @@ static size_t	lenst(int n)
 	return (len);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	char		*str;
 	size_t		len;

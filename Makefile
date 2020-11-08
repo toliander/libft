@@ -6,11 +6,11 @@
 #    By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/07 11:53:52 by toliander         #+#    #+#              #
-#    Updated: 2020/11/07 21:38:42 by jchristi         ###   ########.fr        #
+#    Updated: 2020/11/08 03:41:16 by jchristi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ft_memset.c		\
+SRCS = ft_memset.c 		\
 		ft_memalloc_bonus.c     \
 		ft_bzero.c		\
 		ft_memcpy.c		\
@@ -63,10 +63,8 @@ SRCSB =	$(SRCS) \
 NAME = libft.a
 
 OBJS = $(SRCS:.c=.o)
-# OBJECTS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
 
 OBJSB = $(SRCSB:.c=.o)
-# OBJECTS_BONUS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJSB))
 
 CC = gcc
 

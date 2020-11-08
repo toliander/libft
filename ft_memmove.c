@@ -6,7 +6,7 @@
 /*   By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 12:52:11 by jchristi          #+#    #+#             */
-/*   Updated: 2020/11/07 22:17:09 by jchristi         ###   ########.fr       */
+/*   Updated: 2020/11/08 02:02:24 by jchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ void	*ft_memmove(void *dest, const void *source, size_t n)
 		while (n--)
 			*--des = *--src;
 	}
-	return (des);
+	return (dest);
 }
