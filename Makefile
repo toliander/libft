@@ -6,12 +6,14 @@
 #    By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/07 11:53:52 by toliander         #+#    #+#              #
-#    Updated: 2020/11/08 03:41:16 by jchristi         ###   ########.fr        #
+#    Updated: 2020/11/12 14:54:44 by jchristi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = ft_memset.c 		\
-		ft_memalloc_bonus.c     \
+		ft_memalloc.c     \
+		ft_strcat.c     \
+		ft_strcmp.c     \
 		ft_bzero.c		\
 		ft_memcpy.c		\
 		ft_memccpy.c		\
@@ -24,13 +26,14 @@ SRCS = ft_memset.c 		\
 		ft_isalnum.c		\
 		ft_strchr.c		\
 		ft_strnew.c		\
-		ft_strdel_bonus.c	\
+		ft_strncat.c	\
 		ft_isascii.c		\
 		ft_isprint.c		\
 		ft_toupper.c		\
 		ft_tolower.c		\
 		ft_strrchr.c		\
 		ft_strncmp.c		\
+		ft_strncpy.c		\
 		ft_strlcpy.c		\
 		ft_strlcat.c		\
 		ft_strnstr.c		\

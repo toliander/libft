@@ -6,7 +6,7 @@
 /*   By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 13:29:12 by toliander         #+#    #+#             */
-/*   Updated: 2020/11/07 22:05:59 by jchristi         ###   ########.fr       */
+/*   Updated: 2020/11/12 16:18:52 by jchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,11 @@ static char		*takeword(char *word, char c)
 static void		freewords(char **words, size_t i)
 {
 	while (i--)
-		ft_strdel(&(words[i]));
-	free(*words);
+	{
+		free(words[i]);
+		words[i] = NULL;
+	}
+	free(words);
 }
 
 static char		**takeallwords(char *s, char c, size_t words_count)

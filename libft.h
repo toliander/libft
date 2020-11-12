@@ -6,7 +6,7 @@
 /*   By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 12:03:05 by jchristi          #+#    #+#             */
-/*   Updated: 2020/11/08 03:42:46 by jchristi         ###   ########.fr       */
+/*   Updated: 2020/11/12 14:54:45 by jchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,15 @@ int					ft_toupper(int c);
 int					ft_tolower(int c);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_atoi(const char *str);
+int					strcmp(const char *str1, const char *str2);
 
 size_t				ft_strlen(const char *s);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 
+char				*strncpy(char *destination, const char *source, size_t n);
+char				*strncat(char *destination, const char *append, size_t n);
+char				*strcat(char *destination, const char *append);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strnew(size_t size);
 char				*ft_strrchr(const char *s, int c);
@@ -75,8 +79,6 @@ void				ft_lstadd_back(t_list **alst, t_list *new);
 void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
-
-void				ft_strdel(char **as);
 
 int					ft_lstsize(t_list *lst);
 

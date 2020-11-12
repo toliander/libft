@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchristi <jchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/28 13:04:25 by jchristi          #+#    #+#             */
-/*   Updated: 2020/11/12 12:52:40 by jchristi         ###   ########.fr       */
+/*   Created: 2020/11/07 19:24:48 by jchristi          #+#    #+#             */
+/*   Updated: 2020/11/07 19:25:00 by jchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *strb, const char *stra)
+void	*ft_memalloc(size_t size)
 {
-	char			*bstr;
-	size_t			lena;
-	size_t			i;
-	size_t			j;
+	void *des;
 
-	bstr = (char *)strb;
-	if (!(lena = ft_strlen(stra)))
-		return (bstr);
-	i = 0;
-	while (bstr[i])
-	{
-		j = 0;
-		while (stra[j] && stra[j] == bstr[i + j])
-			j++;
-		if (j == lena)
-			return (&bstr[i]);
-		i++;
-	}
-	return (NULL);
+	des = malloc(size);
+	if (des != NULL)
+		ft_bzero(des, size);
+	return (des);
 }
